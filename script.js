@@ -1,4 +1,4 @@
-let dataFile = 'day13.txt' //-example answer 295
+let dataFile = 'day13.txt'
 
 async function getAllData() {
   let response = await fetch(dataFile)
@@ -29,19 +29,13 @@ function checkAllBus(data) {
   data.busIDs.map(bus => {
     nextBuses.push(getSoonestBus(data.timestamp,bus))
   })
-
-
   return nextBuses
  
 }
 
 
-//console.log (getSoonestBus(939, 7) )
-
 getAllData()
 .then(separateLines)
 .then(removeExtra)
 .then(results => checkAllBus(results))
-// .then(commands => makeFirstMove([0,0,"E"],commands))
-// .then(makeAllTheMoves)
 .then(result => console.log(result)) 
