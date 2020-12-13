@@ -16,11 +16,13 @@ function removeExtra(data){
   let validBusIDs = data[1].split(",")
   let busIDs = validBusIDs.map(bus => [validBusIDs.indexOf(bus), parseInt(bus)])
   let pairs = busIDs.filter(bus => (bus[0] !== 1))  
-  return {timestamp, pairs }
+  return pairs
 }
 
-//HERE I HAVE A TIMESTAMP AND ARRAY OF MINUTES/BUS IDS
+//HERE I HAVE AN ARRAY OF MINUTES/BUS IDS
 
+
+//NOW I AM LOOKING FOR 
 function getSoonestBus(timestamp, busID){
   let soonestBus = (Math.ceil(timestamp / busID))*busID
   let waitTime = soonestBus - timestamp
