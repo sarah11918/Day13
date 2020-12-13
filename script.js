@@ -26,10 +26,10 @@ function removeExtra(data){
 
 function startChecking(pairs) {
    
-   for (let timestamp=100000000000000; timestamp < 200000000000000; timestamp++){
+   for (let timestamp=100000000000000; timestamp < 100000000000010; timestamp++){
 
       if (
-        (timestamp + pairs[0][0]) % pairs[0][1] == 0 &&
+        (timestamp + pairs[0][0]) % pairs[0][1] == 0 && 
         (timestamp + pairs[1][0]) % pairs[1][1] == 0 &&
         (timestamp + pairs[2][0]) % pairs[2][1] == 0 &&
         (timestamp + pairs[3][0]) % pairs[3][1] == 0 &&
@@ -49,6 +49,7 @@ function startChecking(pairs) {
   return 0
 }
 
+// timestamp=100000000000000
 
 getAllData()
 .then(separateLines)
