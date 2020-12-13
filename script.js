@@ -26,7 +26,7 @@ function removeExtra(data){
 
 function startChecking(pairs) {
    
-   for (let timestamp=100000000000000; timestamp < 100000000000010; timestamp++){
+   for (let timestamp=100000000000000; timestamp < 100020000000000; timestamp++){
 
       if (
         (timestamp + pairs[0][0]) % pairs[0][1] == 0 && 
