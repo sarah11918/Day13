@@ -1,4 +1,4 @@
-let dataFile = 'day13-example.txt'
+let dataFile = 'day13.txt'
 
 async function getAllData() {
   let response = await fetch(dataFile)
@@ -26,47 +26,28 @@ function removeExtra(data){
 
 function startChecking(pairs) {
    
-   for (let timestamp=1; timestamp < 10000000; timestamp++){
-     
+   for (let timestamp=100000000000000; timestamp < 200000000000000; timestamp++){
+
       if (
         (timestamp + pairs[0][0]) % pairs[0][1] == 0 &&
         (timestamp + pairs[1][0]) % pairs[1][1] == 0 &&
         (timestamp + pairs[2][0]) % pairs[2][1] == 0 &&
         (timestamp + pairs[3][0]) % pairs[3][1] == 0 &&
-        (timestamp + pairs[4][0]) % pairs[4][1] == 0 
+        (timestamp + pairs[4][0]) % pairs[4][1] == 0 &&
+        (timestamp + pairs[5][0]) % pairs[5][1] == 0 &&
+        (timestamp + pairs[6][0]) % pairs[6][1] == 0 &&
+        (timestamp + pairs[7][0]) % pairs[7][1] == 0 &&
+        (timestamp + pairs[8][0]) % pairs[8][1] == 0
+        
       )
       {
       return timestamp
       }
       
-    }
+  }
 
   return 0
 }
-
-// function startChecking(pairs) {
-   
-//    for (let timestamp=1; timestamp < 100000; timestamp++){
-//      for (let i = 0; i < pairs.length; i++){
-//       if (
-//         (timestamp + pairs[i][0]) % pairs[i][1] == 0)
-//         {
-//         return timestamp
-//         }
-//       }
-//     }
-
-//   return 0
-// }
-
-
-
-
-// for (let i = 0; i < pairs.length; i++) {
-//   
-// }
-
-
 
 
 getAllData()
